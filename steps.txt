@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Key-Value-Map-Operations-1" mapIdentifier="kvmsecret">
+    <DisplayName>Key Value Map Operations-1</DisplayName>
+    <Properties/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <Get assignTo="private.privatekey">
+        <Key>
+            <Parameter>
+                testkey
+        </Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.privatekey-password">
+        <Key>
+            <Parameter>privatekey-password</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>
+---------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GenerateJWT async="false" continueOnError="false" enabled="true" name="Generate-JWT-1">
+    <DisplayName>Generate JWT-1</DisplayName>
+    <Algorithm>RS256</Algorithm>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <PrivateKey>
+        <Password ref="private.privatekey-password"/>
+        <Value ref="private.privatekey"/>
+        <Id>unique-identifier-for-privatekey-here</Id>
+    </PrivateKey>
+    <Subject>apigee-seattle-hatrack-montage</Subject>
+    <Issuer>urn://apigee-edge-JWT-policy-test</Issuer>
+    <Audience>urn://c60511c0-12a2-473c-80fd-42528eb65a6a</Audience>
+    <ExpiresIn>60m</ExpiresIn>
+    <Id/>
+    <OutputVariable>jwt-variable</OutputVariable>
+</GenerateJWT>
+----------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-1">
+    <DisplayName>Assign Message-1</DisplayName>
+    <Properties/>
+    <Add>
+        <Headers>
+            <Header name="jwt-token">
+                {jwt-variable}
+                
+            </Header>
+        </Headers>
+    </Add>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>
+-----------------------------------------------------------------------
