@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Key-Value-Map-Operations-1" mapIdentifier="jwtnonsecret">
+    <DisplayName>Key Value Map Operations-1</DisplayName>
+    <Properties/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <Get assignTo="publickey">
+        <Key>
+            <Parameter>testkey</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>
+------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyJWT async="false" continueOnError="false" enabled="true" name="Verify-JWT-1">
+    <DisplayName>Verify JWT-1</DisplayName>
+    <Algorithm>RS256</Algorithm>
+    <Source>request.header.jwt-token</Source>
+    <PublicKey>
+        <Value ref="publickey"/>
+    </PublicKey>
+    <Subject>apigee-seattle-hatrack-montage</Subject>
+    <Issuer>urn://apigee-edge-JWT-policy-test</Issuer>
+    <Audience>urn://c60511c0-12a2-473c-80fd-42528eb65a6a</Audience>
+</VerifyJWT>
