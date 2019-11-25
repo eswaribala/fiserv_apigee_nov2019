@@ -1,0 +1,6 @@
+openssl genrsa -des3 -out private-encrypted-rsa-des3.pem 2048
+
+
+openssl rsa -in private-encrypted-rsa-des3.pem -outform PEM -pubout -out public-rsa-out.pem
+
+https://github.com/eswaribala/fiserv_apigee_nov2019.git
