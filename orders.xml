@@ -1,0 +1,76 @@
+<?xml version="1.0"?>  
+ 
+ <Orders xmlns="http://tempuri.org/Orders.Xsd" ordDate="2005-02-20">  
+ 
+  
+ <shipTo country="US">  
+ 
+  
+ <name>Alice Smith</name>  
+ 
+ <street>123 Maple Street</street>  
+ 
+ <city>Mill Valley</city>  
+ 
+ <state>CA</state>  
+ 
+ <zip>90952</zip>  
+ 
+  
+ </shipTo>  
+ 
+ <billTo country="US">  
+ 
+  
+ <name>Robert Smith</name>  
+ 
+ <street>8 Oak Avenue</street>  
+ 
+ <city>Old Town</city>  
+ 
+ <state>PA</state>  
+ 
+ <zip>95819</zip>  
+ 
+  
+ </billTo>  
+ 
+ <comment>Hurry, my application is going wild!</comment>  
+ 
+ <items>  
+ 
+  
+ <item partNum="872-AA">  
+ 
+  
+ <Product>XML Converter Professional Edition</Product>  
+ 
+ <Units>1</Units>  
+ 
+ <Price>148.95</Price>  
+ 
+ <comment>Confirm this is cool software</comment>  
+ 
+  
+ </item>  
+ 
+ <item partNum="926-AA">  
+ 
+  
+ <Product>ASP DataGrid Columns .NET assembly</Product>  
+ 
+ <Units>1</Units>  
+ 
+ <Price>34.99</Price>  
+ 
+ <shipDate>2005-02-21</shipDate>  
+ 
+  
+ </item>  
+ 
+  
+ </items>  
+ 
+  
+ </Orders>  
+ 
