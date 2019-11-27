@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="Service-Callout-1">
+    <DisplayName>Service Callout-1</DisplayName>
+    <Properties/>
+    <Request variable="myRequest">
+        <Set>
+            <Headers>
+                <Header name="content-type">text/plain</Header>
+            </Headers>
+            <Payload>
+               {response.content}
+            </Payload>
+        </Set>
+    </Request>
+    <Response>calloutResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>http://logs-01.loggly.com/inputs/b63c44f9-a355-41e9-a5cc-0fab27fe1a8a/tag/http</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>
