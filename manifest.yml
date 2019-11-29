@@ -1,0 +1,29 @@
+---
+applications:
+- name: apigee-cf-service-broker
+  command: node server.js
+  buildpacks: 
+  - nodejs_buildpack
+  env:
+    APIGEE_CONFIGURATIONS: | 
+                          [{"org":"vebconsulting2019-eval",
+                          "env":"test",
+                          "apigee_dashboard_url":"https://enterprise.apigee.com/platform/#/",
+                          "apigee_mgmt_api_url":"https://api.enterprise.apigee.com/v1",
+                          "apigee_proxy_domain":"apigee.net"},
+                          {"org":"vebconsulting2019-eval",
+                          "env":"test",
+                          "apigee_dashboard_url":"https://enterprise.apigee.com/platform/#/",
+                          "apigee_mgmt_api_url":"https://api.enterprise.apigee.com/v1",
+                          "apigee_proxy_domain":"apigee.net"},
+                          {"org":"vebconsulting2019-eval",
+                          "env":"test",
+                          "apigee_dashboard_url":"https://enterprise.apigee.com/platform/#/",
+                          "apigee_mgmt_api_url":"https://api.enterprise.apigee.com/v1",
+                          "apigee_proxy_domain":"apigee.net"},
+                          {"org":"vebconsulting2019-eval",
+                          "env":"test",
+                          "apigee_dashboard_url":"https://enterprise.apigee.com/platform/#/",
+                          "apigee_mgmt_api_url":"https://api.enterprise.apigee.com/v1",
+                          "apigee_proxy_domain":"apigee.net"}
+                          ]
